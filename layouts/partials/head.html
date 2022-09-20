@@ -1,0 +1,30 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="author" content="{{ .Site.Author.name }}">
+
+  <!-- conditionally load css, set title, description, etc -->
+  <!-- add or remove these if you want to have more types of pages -->
+  {{- if eq .Type "page" -}}
+    <meta name="description" content="{{ .Title }}">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <title>{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}</title>
+  {{ else if eq .Type "blog"}}
+    <meta name="description" content="{{ .Title }}">
+    <meta name="robots" content="index, follow">
+    <link rel="alternate" type="application/rss+xml" href="/blog/index.xml" title="">
+    <link rel="stylesheet" type="text/css" href="/css/blog.css">
+    <title>{{ .Title }} - {{ .Site.Params.blogTitle }}</title>
+  {{ else if eq .Type "lists"}}
+    <meta name="description" content="{{ .Title }}">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" type="text/css" href="/css/lists.css">
+    <title>{{ .Title }} - {{ .Site.Params.listsTitle }}</title>
+  {{ else if eq .Type "docs"}}
+    <meta name="description" content="{{ .Title }}">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" type="text/css" href="/css/docs.css">
+    <title>{{ .Title }} - {{ .Site.Params.docsTitle }}</title>
+  {{ end }}
+</head>

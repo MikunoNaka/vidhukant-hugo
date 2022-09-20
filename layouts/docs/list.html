@@ -1,0 +1,34 @@
+{{ define "main" }}
+  <div>
+    <h1 class="title" style="{{ if eq (len .Pages) 0 }}text-align: center;{{ end }}">
+      {{ if .Params.heading }}{{ .Params.heading }}{{ else }}{{ .Title }}{{ end }}
+    </h1>
+    <p>{{ .Description }}</p>
+
+    {{ .Content }}
+
+    <ul class="range">
+      {{ if ne (len .Sections) 0}}
+        {{ range .Sections }}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a> - {{ .Description }}
+            <ul class="range">
+              <!-- Show pages under this section (but not subsections) -->
+              {{ range (union .Sections .Pages).ByWeight }}
+                <li>
+                  <a href="{{ .RelPermalink }}">{{ .Title }}</a> - {{ .Description }}
+                </li>
+              {{ end }}
+            </ul>
+          </li>
+        {{ end }}
+      {{ else }}
+        {{ range .RegularPages.ByWeight }}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a> - {{ .Description }}
+          </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}

@@ -1,0 +1,91 @@
+@import "footer";
+@import "roboto";
+
+$bgColor: #232728;
+$fgColor: #dfdfdf;
+
+$markerColor: $fgColor;
+
+$navInactiveColor: #90e7e7;
+$navActiveColor: #e790c4;
+// #a623db <- nice color might use
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+@mixin selectionColor($fgColor, $bgColor) {
+  color: $fgColor;
+  background: $bgColor;
+}
+::selection { @include selectionColor($bgColor, $navActiveColor) }
+::-moz-selection { @include selectionColor($bgColor, $navActiveColor) }
+
+h1 {color: #e15f99;}
+h2 {color: #47c58d;}
+h3 {color: #e0c45e;}
+// h4 {color: #47c58d;}
+// h5 {color: #47c58d;}
+// h6 {color: #47c58d;}
+
+html, body {
+  line-height: 1.5;
+  background-color: $bgColor;
+  color: $fgColor;
+  padding: 0rem 0.8rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main {
+  // it's main ul not just ul so
+  // it doesn't affect the navbar
+  ul {
+    line-height: 1.8;
+    li::marker {
+      color: $markerColor;
+    }
+  }
+  .filled {
+    li, li::marker {
+      color: $navInactiveColor;
+    }
+  }
+  .two-column ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $navActiveColor;
+}
+
+nav {
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    a {
+      color: $navInactiveColor;
+      margin: 0 0.3rem;
+      padding: 2px 4px;
+    }
+    a.selected {
+      background-color: $navActiveColor;
+      color: $bgColor;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main .two-column ul {
+    columns: 1;
+    -webkit-columns: 1;
+    -moz-columns: 1;
+  }
+}

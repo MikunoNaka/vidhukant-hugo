@@ -1,0 +1,130 @@
+@import "footer";
+@import "roboto";
+@import "sourcecodepro";
+
+$bgColor: #1d1f21;
+$fgColor: #c5c8c6;
+
+$bgColorAlt: #373b41;
+$fgColorAlt: #ffffff;
+
+$headingColor0: #bf87d0;
+$headingColor1: $headingColor0;
+$headingColor2: #ff7070;
+$headingColor3: #76d674;
+$headingColor4: #9c80f4;
+$headingColor5: #ef7b7a;
+
+// $linkColor: #a64ce2;
+$linkColor: #2ed19b;
+// $linkColor: #eda74a;
+// $linkColor: #c682f5;
+//
+//$linkColor: #db4b91;
+$linkColorAlt: pink;
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+@mixin selectionColor($fgColor, $bgColor) {
+  color: $fgColor;
+  background: $bgColor;
+}
+
+::selection { @include selectionColor($bgColor, $headingColor0) }
+::-moz-selection { @include selectionColor($bgColor, $headingColor0) }
+
+html, body {
+  line-height: 1.5;
+  background-color: $bgColor;
+  color: $fgColor;
+  padding: 0rem 0.8rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main .single {
+  h1, h3, h5 {
+    text-align: center;
+  }
+}
+
+code {
+  background-color: $bgColorAlt;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+pre code {
+  overflow: scroll;
+  display: block;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 90%;
+}
+
+h1 {
+  color: $headingColor0;
+}
+
+h2 {
+  color: $headingColor1;
+}
+
+h3 {
+  color: $headingColor2;
+}
+
+h4 {
+  color: $headingColor3;
+}
+
+h5 {
+  color: $headingColor4;
+}
+
+h6 {
+  color: $headingColor5;
+}
+
+a {
+  text-decoration: none;
+  color: $linkColor;
+}
+
+// the year/tag heading of the blog
+.list {
+  .section { color: $headingColor1; }
+  li::marker { color: $linkColor; }
+}
+
+main {
+  ul, ol {
+    line-height: 1.8;
+  }
+}
+
+nav {
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    a {
+      color: $linkColorAlt;
+      margin: 0 0.3rem;
+      padding: 2px 4px;
+    }
+    a.selected {
+      background-color: $headingColor0;
+      color: $bgColor;
+    }
+  }
+}

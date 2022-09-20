@@ -1,0 +1,10 @@
+<footer>
+  <div id="gifs">
+    {{ range .Site.Params.gifs}}
+      {{ . | safeHTML }}
+    {{ end }}
+  </div>
+  <div id="copyright">
+    {{ .Site.Copyright | safeHTML }}
+  </div>
+</footer>

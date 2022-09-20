@@ -1,0 +1,24 @@
+{{ define "main" }}
+{{ $wrappedTable := printf "<div class='table-wrapper'> ${1} </div>" }}
+<div>
+  <h1 style="text-align: center;" class="title">{{ .Title }}</h1>
+  <!--p style="text-align: center;">{{ .Summary }}</p-->
+  {{ .Content | replaceRE "(<table>(?:.|\n)+?</table>)" $wrappedTable | safeHTML }}
+
+  <!-- For some reason prevpage shows next and vice versa -->
+  <div class="page-nav">
+    <span>
+      {{ if .NextInSection }}
+        <a href="{{ .NextInSection.Permalink }}">Previous: {{ .NextInSection.Title }}</a>
+      {{ end }}
+    </span>
+
+    <span>
+      {{ if .PrevInSection }}
+        <a href="{{ .PrevInSection.Permalink }}">Next: {{ .PrevInSection.Title }}</a>
+      {{ end }}
+    </span>
+  </div>
+
+</div>
+{{ end }}

@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <div class="list">
+    <h1>{{ if .Params.heading }}{{ .Params.heading }}{{ else }}{{ .Title }}{{ end }}</h1>
+      {{ range .Sections.ByDate.Reverse }}
+        <h2 class="section" id="{{ .Title }}">{{ .Title }}:</h2>
+        <ul>
+          {{ range (union .Sections .Pages).ByDate.Reverse }}
+            <li>
+              <p>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                <sup>{{ .Date.Format "2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }} {{ .Date.Format "January" }}</sup>
+              </p>
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+  </div>
+{{ end }}
+

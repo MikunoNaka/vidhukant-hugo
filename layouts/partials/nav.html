@@ -1,0 +1,11 @@
+<header>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/contact/" class="{{ if eq "contact" . }}selected{{ end }}">Contact</a></li>
+      <li><a href="/blog/" class="{{ if eq "blog" . }}selected{{ end }}">Blog</a></li>
+      <li><a href="/lists/" class="{{ if eq "lists" . }}selected{{ end }}">Lists</a></li>
+      <li><a href="/docs/" class="{{ if eq "docs" . }}selected{{ end }}">Docs</a></li>
+    </ul>
+  </nav>
+</header>

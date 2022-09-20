@@ -1,0 +1,150 @@
+@import "footer";
+@import "roboto";
+
+* {
+  // font-family: 'Source Code Pro', monospace;
+  font-family: 'Roboto', sans-serif;
+}
+
+@mixin selection {
+  color: #ffffff;
+  background: #955ee6;
+}
+::selection {@include selection;}
+::-moz-selection {@include selection;}
+
+body {
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  background-color: #232627;
+  color: #ffffff;
+}
+
+.section {
+  width: 100vw;
+  height: auto;
+  p {
+    line-height: 2;
+  }
+}
+
+#section-1 {
+  background-color: #56355D;
+
+  // Indian flag theme
+  // color: #232627;
+  // background: linear-gradient(118deg, rgba(255,147,0,1) 0%, rgba(255,255,255,1) 50%, rgba(10,199,40,1) 100%);
+}
+
+.img-l, .img-r {
+  max-width: 300px;
+  img {
+    max-width: 100%;
+  }
+  margin: auto;
+  text-align: center;
+}
+
+a {
+  color: #00ff8c;
+}
+
+.section-child {
+  box-sizing: border-box;
+  max-width: 1920px;
+  padding: 20px 25px 20px 25px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+img {
+  display: block;
+}
+
+#image-and-links {
+  $width: 18rem;
+  width: $width;
+  margin: auto;
+
+  img {
+    border-radius: 50%;
+    max-width: $width;
+  }
+
+  #my-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    // justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: $width;
+    li {
+      margin: 5px; // only for justify-content: center;
+      font-size: 1.2rem;
+    }
+    a {
+      color: white;
+      // color: #232627; // Indian flag theme
+    }
+  }
+}
+
+nav {
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    a {
+      margin: 0 0.3rem;
+      text-decoration: none;
+      padding: 2px 4px;
+    }
+    a.selected {
+      background-color: #00ff8c;
+      color: #232627;
+    }
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .section {
+    min-height: 100vh;
+    .section-child {
+      width: 95%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+  }
+  $img-margin: 6rem;
+  .img-l {
+    margin-right: $img-margin;
+    margin-left: 0;
+  }
+  .img-r {
+    margin-left: $img-margin;
+    margin-right: 0;
+  }
+  #image-and-links {
+    margin-left: 4rem;
+    $width: 24rem;
+    width: $width;
+
+    img {
+      max-width: $width;
+    }
+
+    #my-links {
+      width: $width;
+    }
+    a {
+      font-size: 1.5rem;
+    }
+  }
+}

@@ -1,0 +1,139 @@
+@import "footer";
+@import "roboto";
+@import "sourcecodepro";
+
+$bgColor: #232627;
+$fgColor: #c5c8c6;
+
+$bgColorAlt: #444445;
+$fgColorAlt: #ffffff;
+
+$headingColor0: #2ed19b;
+$headingColor1: #db4b91;
+$headingColor2: #638dcf;
+
+$linkColor: #eda74a;
+$linkColorAlt: #db4b91;
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+@mixin selectionColor($fgColor, $bgColor) {
+  color: $fgColor;
+  background: $bgColor;
+}
+
+::selection { @include selectionColor($bgColor, $headingColor0) }
+::-moz-selection { @include selectionColor($bgColor, $headingColor0) }
+
+html, body {
+  line-height: 1.5;
+  background-color: $bgColor;
+  color: $fgColor;
+  padding: 0rem 0.8rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+code {
+  background-color: $bgColorAlt;
+  padding: 2px 5px;
+  border-radius: 4px;
+  * {font-family: 'Source Code Pro', sans-serif;}
+}
+
+pre code {
+  overflow: scroll;
+  display: block;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 90%;
+}
+
+// page title (in single.html)
+.title {
+  padding-left: 0.5rem;
+  color: $bgColor;
+  background-color: $headingColor0;
+}
+
+h1, h2 {
+  color: $headingColor0;
+}
+
+h3, h4 {
+  color: $headingColor1;
+}
+
+h5, h6 {
+  color: $headingColor2;
+}
+
+a {
+  text-decoration: none;
+  color: $linkColor;
+}
+
+.table-wrapper {
+  overflow-x: scroll;
+  table {
+    width: 100%;
+    margin-bottom: 1rem;
+    white-space: nowrap;
+    th {
+      text-align: left;
+      font-size: 1.2em;
+      border-bottom: 2px solid $headingColor0;
+    }
+    tr:last-child td {
+      border-bottom: 2px solid $headingColor1;
+    }
+    tr:nth-child(even) {
+      background-color: rgba($bgColorAlt, 0.3);
+    }
+  }
+}
+
+.range li::marker {
+  color: $linkColor;
+}
+
+main {
+  ul, ol {
+    line-height: 1.8;
+  }
+}
+
+.page-nav {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  a {
+    text-decoration: underline;
+  }
+}
+
+nav {
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    a {
+      color: $linkColorAlt;
+      margin: 0 0.3rem;
+      padding: 2px 4px;
+    }
+    a.selected {
+      background-color: $headingColor0;
+      color: $bgColor;
+    }
+  }
+}
