@@ -1,0 +1,32 @@
+baseURL = 'https://www.example.com'
+languageCode = 'en-us'
+title = "My Website"
+copyright = "<p> Copyright &copy; 2022, All rights Reserved </p>"
+theme = "vidhukant-hugo"
+
+[params]
+# if you want to use the 90's style web buttons, add them as such in this list
+gifs = [
+  "<a href=''><img src='' target='_blank' alt='' width='88'></a>"
+  , "<a href=''><img src='' target='_blank' alt='' width='88'></a>"
+]
+# URL for the picture shown on homepage
+mainPictureURL = "/images/vidhukant.webp"
+mainPictureAlt = "Vidhu Kant's Image" # alt for mainPicture
+
+blogTitle = "My Blog" # title shown for the blog page
+listsTitle = "My Lists" # title shown for the lists page
+docsTitle = "My Docs" # title shown for the docs page
+
+indexContent = """
+<div id="my-intro">
+  <h1>Welcome to my website</h1>
+  <p>
+    Voluptatem ut sit placeat sint. Sit itaque minus sed nihil qui perferendis est. Eaque consectetur omnis vel consequatur. Voluptatem blanditiis qui aperiam enim temporibus voluptas maiores non. Nostrum quidem ipsa consequatur ratione aliquid. Facilis consequatur vel facere et molestiae suscipit nesciunt. Veritatis dolore corrupti doloremque reprehenderit. Blanditiis voluptates modi architecto voluptatibus voluptatem et quo. Ut neque architecto numquam dolorem. Harum sit vitae quia unde. Consequatur illo aperiam id nisi. Quod id magni animi voluptatem. Aperiam non itaque sint. Sed quod placeat aliquid aut. Dolorem dolorem alias sed quia magni aliquam. Laboriosam labore doloremque soluta sunt distinctio officiis. Ducimus quas consequatur deserunt praesentium explicabo impedit. Consequatur omnis iste voluptate voluptatibus repellat. Laboriosam veniam ipsa quam tempora eos iste optio.
+  </p>
+</div>
+"""
+
+[author]
+  name = ""
+  email = ""
