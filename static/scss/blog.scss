@@ -63,11 +63,17 @@ pre code {
   display: block;
 }
 
-img {
+main img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 1rem auto;
   max-width: 90%;
+  max-height: 30rem;
+  border: 1px solid $headingColor4;
+}
+
+// linked images have the same border color as a link
+main a img {
+  border: 1px solid $linkColor;
 }
 
 h1 {
