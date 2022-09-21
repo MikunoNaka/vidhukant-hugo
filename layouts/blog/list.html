@@ -1,6 +1,7 @@
 {{ define "main" }}
   <div class="list">
     <h1>{{ if .Params.heading }}{{ .Params.heading }}{{ else }}{{ .Title }}{{ end }}</h1>
+    {{ .Content }}
       {{ range .Sections.ByDate.Reverse }}
         <h2 class="section" id="{{ .Title }}">{{ .Title }}:</h2>
         <ul>
