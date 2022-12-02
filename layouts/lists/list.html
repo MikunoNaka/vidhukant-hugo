@@ -1,7 +1,7 @@
 {{ define "main" }}
   <div class="list">
     <h1>{{ if .Params.heading }}{{ .Params.heading }}{{ else }}{{ .Title }}{{ end }}</h1>
-    <p>These are random lists of stuff by me. These include some recommendations or things I use, maybe some plans as a "public to-do list", etc</p>
+    {{ .Content }}
     <ul>
       {{ range .Pages.ByTitle }}
         <li>
