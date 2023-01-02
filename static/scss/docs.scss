@@ -9,8 +9,8 @@ $bgColorAlt: #444445;
 $fgColorAlt: #ffffff;
 
 $headingColor0: #2ed19b;
-$headingColor1: #db4b91;
-$headingColor2: #638dcf;
+$headingColor1: #638dcf;
+$headingColor2: #db4b91;
 
 $linkColor: #eda74a;
 $linkColorAlt: #db4b91;
@@ -63,15 +63,15 @@ img {
   background-color: $headingColor0;
 }
 
-h1, h2 {
+h1, h4 {
   color: $headingColor0;
 }
 
-h3, h4 {
+h2, h5 {
   color: $headingColor1;
 }
 
-h5, h6 {
+h3, h6 {
   color: $headingColor2;
 }
 
