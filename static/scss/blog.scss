@@ -71,6 +71,10 @@ main img {
   border: 1px solid $headingColor4;
 }
 
+#post-title {
+  text-align: center;
+}
+
 // linked images have the same border color as a link
 main a img {
   border: 1px solid $linkColor;
