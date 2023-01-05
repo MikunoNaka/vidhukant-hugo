@@ -1,6 +1,6 @@
 {{ define "main" }}
   <div>
-    <h1 class="title" style="{{ if eq (len .Pages) 0 }}text-align: center;{{ end }}">
+    <h1 class="title {{ if eq (len .Pages) 0 }}centered{{ end }}">
       {{ if .Params.heading }}{{ .Params.heading }}{{ else }}{{ .Title }}{{ end }}
     </h1>
     {{ if ne (len .Pages) 0 }}
